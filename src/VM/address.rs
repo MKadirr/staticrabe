@@ -1,0 +1,2 @@
+struct Address(u64);
+
