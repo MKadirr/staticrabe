@@ -1,7 +1,7 @@
 use std::io::SeekFrom;
-use crate::parser::cursor_wrapper::{AddressSpaceHandler, CursorWrapper};
+use crate::utils::cursor_wrapper::{AddressSpaceHandler, CursorWrapper};
 use crate::parser::header::ElfHeader;
-use crate::parser::parse_error::ParseError;
+use crate::utils::parse_error::ParseError;
 use crate::parser::program_header::ProgramHeader;
 
 #[repr(u32)]

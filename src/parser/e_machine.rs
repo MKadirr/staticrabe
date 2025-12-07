@@ -1,5 +1,5 @@
 use crate::parser::e_machine::EMachine::Unknown;
-use crate::parser::parse_error::ParseError;
+use crate::utils::parse_error::ParseError;
 
 #[derive(Debug, Clone)]
 pub enum EMachine {

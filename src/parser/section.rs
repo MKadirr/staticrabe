@@ -1,6 +1,6 @@
 use std::io::SeekFrom;
-use crate::parser::cursor_wrapper::{AddressSpaceHandler, CursorWrapper};
-use crate::parser::parse_error::ParseError;
+use crate::utils::cursor_wrapper::{AddressSpaceHandler, CursorWrapper};
+use crate::utils::parse_error::ParseError;
 use crate::parser::section_header::SectionHeader;
 
 pub struct RawSection {

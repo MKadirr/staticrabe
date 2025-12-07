@@ -1,6 +1,6 @@
-use crate::parser::cursor_wrapper::CursorWrapper;
+use crate::utils::cursor_wrapper::CursorWrapper;
 use crate::parser::header::ElfHeader;
-use crate::parser::parse_error::ParseError;
+use crate::utils::parse_error::ParseError;
 use crate::parser::program_header::ProgramHeader;
 use crate::parser::section_header::SectionHeader;
 
@@ -37,11 +37,12 @@ impl ElfFile {
         let program_headers : Vec<ProgramHeader> = elf_header.parse_program_headers(reader)?;
         let section_headers : Vec<SectionHeader> = elf_header.parse_section_headers(reader)?;
 
+        // println!("{}", elf_header.e_shsstrndx);
+        // println!("{:#x?}", section_headers[elf_header.e_shsstrndx as usize]);
+
         let names_buffer = section_headers[elf_header.e_shsstrndx as usize].get_section(reader)?;
 
-        println!("{:#x?}", names_buffer);
-
-        // println!("{:#x?}", strings);
+        // println!("{:#x?}", names_buffer);
 
         for section in &section_headers {
             println!("{:#x?}", get_name(&names_buffer, section.sh_name));

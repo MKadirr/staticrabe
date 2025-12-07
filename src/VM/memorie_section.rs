@@ -1,9 +1,12 @@
-use crate::parser::cursor_wrapper::CursorWrapper;
+use crate::utils::cursor_wrapper::CursorWrapper;
+use std::fmt;
+use std::fmt::{write, Formatter};
 
 pub struct MemorySection {
+    pub name: String,
     pub real_addr: u64,
     pub size: u64,
-    pub data: CursorWrapper,
+    pub data: Vec<u8>,
 }
 
 impl MemorySection {
@@ -31,5 +34,17 @@ impl MemorySection {
 
     pub fn get64(&self, addr: u64) -> Option<u64> {
         todo!()
+    }
+}
+
+impl fmt::Display for MemorySection {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        write!(f, "{}-{}: {}\n", self.real_addr, self.real_addr + self.size, self.name);
+
+        for i in 0..self.size {
+
+        }
+
+        write!(f, "\n")
     }
 }

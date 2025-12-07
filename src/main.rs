@@ -1,10 +1,11 @@
 use std::{env, fs};
 use std::fs::File;
-use crate::parser::cursor_wrapper::CursorWrapper;
+use utils::cursor_wrapper::CursorWrapper;
 use crate::parser::parse_file;
 
 mod parser;
 mod VM;
+mod utils;
 
 fn main()
 {

@@ -1,7 +1,7 @@
-use crate::parser::cursor_wrapper::{AddressSpaceHandler, CursorWrapper};
+use crate::utils::cursor_wrapper::{AddressSpaceHandler, CursorWrapper};
 use crate::parser::e_machine::EMachine;
 use crate::parser::header::EType::{ET_CORE, ET_DYN, ET_EXEC, ET_NONE, ET_OS, ET_PROC, ET_REL};
-use crate::parser::parse_error::ParseError;
+use crate::utils::parse_error::ParseError;
 
 #[derive(Debug, Clone)]
 pub enum Archi {

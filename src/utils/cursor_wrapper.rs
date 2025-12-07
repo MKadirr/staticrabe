@@ -1,5 +1,5 @@
 use std::io::{Cursor, Read, Seek, SeekFrom};
-use crate::parser::parse_error::ParseError;
+use crate::utils::parse_error::ParseError;
 
 pub trait AddressSpaceHandler {
     fn read(&mut self, buf: &mut [u8]) -> Result<usize, ParseError>;
@@ -45,7 +45,7 @@ pub struct CursorWrapper {
 impl CursorWrapper {
     pub(crate) fn new(buf: Vec<u8>) -> Self {
         Self {
-            _cursor : Cursor::new(buf)
+            _cursor: Cursor::new(buf)
         }
     }
 }

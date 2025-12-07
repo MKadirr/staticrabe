@@ -1,7 +1,7 @@
 use std::io::SeekFrom;
-use crate::parser::cursor_wrapper::{AddressSpaceHandler, CursorWrapper};
+use crate::utils::cursor_wrapper::{AddressSpaceHandler, CursorWrapper};
 use crate::parser::header::{Archi, ElfHeader};
-use crate::parser::parse_error::ParseError;
+use crate::utils::parse_error::ParseError;
 use crate::parser::program_header::PType::{Unknown, PT_DYNAMIC, PT_INTERP, PT_LOAD, PT_NOTE, PT_NULL, PT_OS, PT_PHDR, PT_PROC, PT_SHLIB, PT_TLS};
 
 #[derive(Debug)]
